@@ -55,7 +55,7 @@ sfx gameover   "sine=f=300:d=1.62"      1.62 "aeval=val(0)*exp(-1.8*t),asetrate=
 sfx victory    "sine=f=640:d=1.82"      1.82 "aeval=val(0)*exp(-1.6*t),tremolo=f=9:d=0.5,aecho=0.7:0.6:90|180:0.4|0.3" 0.65
 sfx boss_enter "sine=f=90:d=1.85"       1.85 "aeval=val(0)*exp(-1.4*t),lowpass=f=900,aecho=0.85:0.6:150:0.4" 0.85
 sfx boss_phase "sine=f=120:d=1.15"      1.15 "aeval=val(0)*exp(-2.2*t),volume=1.8,alimiter,lowpass=f=1400" 0.70
-sfx warp       "sine=f=160:d=0.92"      0.92 "aeval=val(0)*exp(-2*t),asetrate=44100*1.6,aresample=44100,aphaser=type=i" 0.55
+sfx warp       "sine=f=160:d=0.92"      0.92 "aeval=val(0)*exp(-2*t),asetrate=44100*1.6,aresample=44100" 0.55
 
 # --------------------------------------------------------- music loops
 echo "Generating music loops..."
