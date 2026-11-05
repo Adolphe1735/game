@@ -29,7 +29,7 @@ sfx spread        "sine=f=520:d=0.22"   0.22 "aeval=val(0)*exp(-11*t),vibrato=f=
 sfx rapid         "sine=f=1100:d=0.11"  0.11 "aeval=val(0)*exp(-20*t),highpass=f=700" 0.38
 sfx railgun       "sine=f=180:d=0.58"   0.58 "aeval=val(0)*exp(-4*t),lowpass=f=1800,aecho=0.7:0.6:60:0.4" 0.60
 sfx reload        "sine=f=240:d=0.32"   0.32 "aeval=val(0)*exp(-8*t),asetrate=44100*1.4,aresample=44100" 0.40
-sfx empty         "square=f=140:d=0.13" 0.13 "lowpass=f=900" 0.40
+sfx empty         "aevalsrc=0.5*sgn(sin(2*PI*140*t)):d=0.13" 0.13 "lowpass=f=900" 0.40
 
 # ---------------------------------------------------------- impact SFX
 sfx hit           "sine=f=200:d=0.20"   0.20 "aeval=val(0)*exp(-16*t),distortion=0.4" 0.50
@@ -48,7 +48,7 @@ sfx achievement "sine=f=990:d=0.92"     0.92 "aeval=val(0)*exp(-2.6*t),aecho=0.7
 sfx ui_click  "sine=f=760:d=0.08"       0.08 "aeval=val(0)*exp(-26*t),highpass=f=500" 0.42
 sfx ui_hover  "sine=f=1200:d=0.06"      0.06 "aeval=val(0)*exp(-30*t),highpass=f=800" 0.28
 sfx ui_back   "sine=f=420:d=0.13"       0.13 "aeval=val(0)*exp(-16*t)" 0.40
-sfx ui_error  "square=f=180:d=0.23"     0.23 "lowpass=f=700" 0.40
+sfx ui_error  "aevalsrc=0.5*sgn(sin(2*PI*180*t)):d=0.23" 0.23 "lowpass=f=700" 0.40
 
 # ---------------------------------------------------------- game state
 sfx gameover   "sine=f=300:d=1.62"      1.62 "aeval=val(0)*exp(-1.8*t),asetrate=44100*0.75,aresample=44100,aecho=0.8:0.5:120:0.35" 0.70
