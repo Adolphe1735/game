@@ -32,7 +32,7 @@ sfx reload        "sine=f=240:d=0.32"   0.32 "aeval=val(0)*exp(-8*t),asetrate=44
 sfx empty         "aevalsrc=0.5*sgn(sin(2*PI*140*t)):d=0.13" 0.13 "lowpass=f=900" 0.40
 
 # ---------------------------------------------------------- impact SFX
-sfx hit           "sine=f=200:d=0.20"   0.20 "aeval=val(0)*exp(-16*t),distortion=0.4" 0.50
+sfx hit           "sine=f=200:d=0.20"   0.20 "aeval=val(0)*exp(-16*t),volume=2.2,alimiter" 0.50
 sfx explosion     "$(noise_src 0.62)"   0.62 "lowpass=f=1800,aeval=val(0)*exp(-7*t),aecho=0.6:0.4:40:0.3" 0.80
 sfx big_explosion "$(noise_src 1.45)"   1.45 "lowpass=f=1200,aeval=val(0)*exp(-3.4*t),aecho=0.8:0.6:90|140:0.4|0.3" 0.90
 sfx shield_hit    "sine=f=660:d=0.27"   0.27 "aeval=val(0)*exp(-10*t),vibrato=f=8:d=0.6" 0.50
@@ -54,7 +54,7 @@ sfx ui_error  "aevalsrc=0.5*sgn(sin(2*PI*180*t)):d=0.23" 0.23 "lowpass=f=700" 0.
 sfx gameover   "sine=f=300:d=1.62"      1.62 "aeval=val(0)*exp(-1.8*t),asetrate=44100*0.75,aresample=44100,aecho=0.8:0.5:120:0.35" 0.70
 sfx victory    "sine=f=640:d=1.82"      1.82 "aeval=val(0)*exp(-1.6*t),tremolo=f=9:d=0.5,aecho=0.7:0.6:90|180:0.4|0.3" 0.65
 sfx boss_enter "sine=f=90:d=1.85"       1.85 "aeval=val(0)*exp(-1.4*t),lowpass=f=900,aecho=0.85:0.6:150:0.4" 0.85
-sfx boss_phase "sine=f=120:d=1.15"      1.15 "aeval=val(0)*exp(-2.2*t),distortion=0.25,lowpass=f=1400" 0.70
+sfx boss_phase "sine=f=120:d=1.15"      1.15 "aeval=val(0)*exp(-2.2*t),volume=1.8,alimiter,lowpass=f=1400" 0.70
 sfx warp       "sine=f=160:d=0.92"      0.92 "aeval=val(0)*exp(-2*t),asetrate=44100*1.6,aresample=44100,aphaser=type=i" 0.55
 
 # --------------------------------------------------------- music loops
@@ -73,7 +73,7 @@ echo "  + music_battle.mp3"
 
 # Boss: darker, faster tension bed, 32s loopable
 ffmpeg -y -hide_banner -loglevel error -f lavfi -i \
-"sine=f=44:d=32,volume=0.60[a];sine=f=87.31:d=32,volume=0.30[b];sine=f=130.81:d=32,volume=0.20[c];[a][b][c]amix=inputs=3:normalize=0,tremolo=f=3.4:d=0.6,aecho=0.8:0.6:200|400:0.35|0.2,distortion=0.15,lowpass=f=2400,volume=0.55" \
+"sine=f=44:d=32,volume=0.60[a];sine=f=87.31:d=32,volume=0.30[b];sine=f=130.81:d=32,volume=0.20[c];[a][b][c]amix=inputs=3:normalize=0,tremolo=f=3.4:d=0.6,aecho=0.8:0.6:200|400:0.35|0.2,volume=1.5,alimiter,lowpass=f=2400,volume=0.55" \
   -t 32 -ar 44100 -ac 2 -b:a 128k "$OUT/music_boss.mp3"
 echo "  + music_boss.mp3"
 
