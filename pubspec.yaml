@@ -1,0 +1,25 @@
+name: neon_void
+description: Neon Void — a neon arcade space shooter built with Flutter and Flame.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flame: ^1.32.0
+  flame_audio: ^2.11.0
+  provider: ^6.1.2
+  shared_preferences: ^2.3.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/audio/

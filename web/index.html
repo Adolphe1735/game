@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Neon Void — a neon arcade space shooter built with Flutter and Flame.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#04050E">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Neon Void">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Neon Void</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #04050E;
+      overscroll-behavior: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      background: radial-gradient(circle at 50% 40%, #141B3C 0%, #04050E 70%);
+      color: #35E1FF;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      font-size: 13px;
+      transition: opacity 0.45s ease;
+      z-index: 10;
+    }
+    #loading .ring {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid rgba(53, 225, 255, 0.18);
+      border-top-color: #A855F7;
+      border-right-color: #35E1FF;
+      animation: spin 0.9s linear infinite;
+      box-shadow: 0 0 24px rgba(53, 225, 255, 0.35);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loading.hidden { opacity: 0; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div id="loading"><div class="ring"></div><div>Initialising Neon Void</div></div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (el) { el.classList.add('hidden'); setTimeout(function () { el.remove(); }, 500); }
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

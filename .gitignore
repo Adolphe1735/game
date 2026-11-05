@@ -1,0 +1,17 @@
+.dart_tool/
+.dart_tool/package_config.json
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+.vscode/
+android/.gradle/
+android/local.properties
+android/key.properties
+windows/flutter/ephemeral/
+ios/Pods/
+macos/Pods/
+linux/flutter/ephemeral/
+.DS_Store
