@@ -25,7 +25,7 @@ echo "Generating Neon Void audio..."
 sfx shoot         "sine=f=880:d=0.16"   0.16 "aeval=val(0)*exp(-14*t),highpass=f=400" 0.50
 sfx laser         "sine=f=1500:d=0.24"  0.24 "aeval=val(0)*exp(-9*t),tremolo=f=42:d=0.6,highpass=f=600" 0.45
 sfx plasma        "sine=f=320:d=0.36"   0.36 "aeval=val(0)*exp(-6*t),lowpass=f=2400,aphaser=type=t" 0.55
-sfx spread        "sine=f=520:d=0.22"   0.22 "aeval=val(0)*exp(-11*t),chorus=0.6:0.9:40|55:0.25|0.3:0.3|0.25" 0.45
+sfx spread        "sine=f=520:d=0.22"   0.22 "aeval=val(0)*exp(-11*t),vibrato=f=30:d=0.35,aecho=0.5:0.4:35:0.3" 0.45
 sfx rapid         "sine=f=1100:d=0.11"  0.11 "aeval=val(0)*exp(-20*t),highpass=f=700" 0.38
 sfx railgun       "sine=f=180:d=0.58"   0.58 "aeval=val(0)*exp(-4*t),lowpass=f=1800,aecho=0.7:0.6:60:0.4" 0.60
 sfx reload        "sine=f=240:d=0.32"   0.32 "aeval=val(0)*exp(-8*t),asetrate=44100*1.4,aresample=44100" 0.40
