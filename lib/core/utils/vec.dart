@@ -96,7 +96,8 @@ class Rng {
 
   int nextInt(int max) {
     if (max <= 0) return 0;
-    return nextDouble().floor() % max == 0 ? nextDouble() * max ~/ 1 : (nextDouble() * max).floor();
+    final value = (nextDouble() * max).floor();
+    return value >= max ? max - 1 : value;
   }
 
   double nextDouble() {
@@ -114,7 +115,7 @@ class Rng {
 
   bool chance(double probability) => nextDouble() < probability;
 
-  T pick<T>(List<T> items) => items[nextDouble() * items.length ~/ 1];
+  T pick<T>(List<T> items) => items[nextInt(items.length)];
 
   void shuffle<T>(List<T> items) {
     for (var i = items.length - 1; i > 0; i--) {
